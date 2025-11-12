@@ -1,0 +1,11 @@
+# New-Project/config.yaml
+data_root: "C:/Users/Zubair/Desktop/Project/data_root"  # <-- Added missing quote
+ref_fasta: "C:/Users/Zubair/Desktop/Project/reference/hg38.fa"
+
+# training
+batch_size: 128
+epochs: 25
+pos_weight: 1.0
+learning_rate: 2.0e-4
+window_bp: 100
+gpu_id: 0
