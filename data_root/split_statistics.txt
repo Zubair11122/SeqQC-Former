@@ -1,0 +1,20 @@
+Dataset Split Statistics
+==================================================
+Total samples: 89447
+Positive rate: 1.54%
+
+Train:
+  Samples: 57245
+  Positive: 882 (1.54%)
+  Negative: 56363 (98.46%)
+
+Validation:
+  Samples: 14312
+  Positive: 220 (1.54%)
+  Negative: 14092 (98.46%)
+
+Test:
+  Samples: 17890
+  Positive: 276 (1.54%)
+  Negative: 17614 (98.46%)
+
