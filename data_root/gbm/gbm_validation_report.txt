@@ -1,0 +1,20 @@
+======================================================================
+GBM External Validation Summary Report
+======================================================================
+Total variants/site rows: 53,164
+Prediction threshold: 0.75
+Predicted artifacts: 30,177 (56.76%)
+Mean probability: 0.6316
+Median probability: 0.8820
+Number of samples: 461
+Top genes by predicted artifact count:
+  TTN: 157
+  MUC16: 99
+  EGFR: 65
+  FLG: 48
+  MUC17: 43
+  TP53: 37
+  RELN: 33
+  RYR2: 33
+  PKHD1: 32
+  PCLO: 32
