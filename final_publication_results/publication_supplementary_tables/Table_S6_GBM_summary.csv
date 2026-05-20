@@ -1,0 +1,60 @@
+Category,Item,Value
+SEQC2 dataset,Total loci,89447
+SEQC2 dataset,Positive labels,1378
+SEQC2 dataset,Negative labels,88069
+SEQC2 dataset,Positive fraction,0.015405771015238073
+Feature matrix,Sequences shape,"(89447, 501, 4)"
+Feature matrix,QC features shape,"(89447, 11)"
+Feature matrix,QC feature names,DP; AD; VAF; MQ; SB; tumor_strand_bias; tumor_orientation_bias; tumor_clipped_fraction; tumor_mismatch_fraction; normal_alt_fraction; germline_support_flag
+Split,Split file rows,89447
+Split,train samples,57245
+Split,val samples,14312
+Split,test samples,17890
+Split class balance,train positives,882
+Split class balance,train negatives,56363
+Split class balance,train positive fraction,0.015407459166739454
+Split class balance,val positives,220
+Split class balance,val negatives,14092
+Split class balance,val positive fraction,0.015371716042481833
+Split class balance,test positives,276
+Split class balance,test negatives,17614
+Split class balance,test positive fraction,0.015427613191727222
+SEQC2 test performance,Metrics file rows,1
+SEQC2 test performance,split,test
+SEQC2 test performance,n,17890
+SEQC2 test performance,positives,276
+SEQC2 test performance,negatives,17614
+SEQC2 test performance,threshold,0.7499999999999999
+SEQC2 test performance,checkpoint,checkpoints/best-epoch=epoch=23-auroc=val_auroc=0.9997.ckpt
+SEQC2 test performance,AUROC,0.9999703792931512
+SEQC2 test performance,AUPRC,0.9982015266467728
+SEQC2 test performance,accuracy,0.9981553940749022
+SEQC2 test performance,precision,0.8932038834951457
+SEQC2 test performance,recall,1.0
+SEQC2 test performance,f1,0.9435897435897436
+SEQC2 test performance,TP,276
+SEQC2 test performance,TN,17581
+SEQC2 test performance,FP,33
+SEQC2 test performance,FN,0
+Threshold,Best threshold,0.7499999999999999
+SEQC2 test predictions,Rows,17890
+SEQC2 test predictions,Columns,row_index; y_true; prob; pred
+GBM main,Total SNVs,53164
+GBM main,Columns,key; Chromosome; Start_Position; End_Position; Reference_Allele; Tumor_Seq_Allele2; Tumor_Sample_Barcode; Matched_Norm_Sample_Barcode; source_maf; Hugo_Symbol; Variant_Classification; Variant_Type; t_depth; t_ref_count; t_alt_count; n_depth; n_ref_count; n_alt_count; NCBI_Build; rep_error_probability; rep_error_predicted; umap_coverage; rtim_coverage; prediction_threshold
+GBM main,Mean probability,0.6316268240119874
+GBM main,Median probability,0.8819784
+GBM main,Min probability,5.527435e-16
+GBM main,Max probability,0.99152315
+GBM main,Predicted artifact candidates,30177
+GBM main,Artifact candidate fraction,0.5676209465051538
+GBM main,Retained variants,22987
+GBM publication summary,Rows,937
+GBM publication summary,Columns,level; group; threshold; n_variants; n_predicted_artifact; artifact_fraction; median_rep_error_probability; mean_rep_error_probability
+GBM gene summary,Rows,14332
+GBM gene summary,Columns,Hugo_Symbol; threshold; n_variants; n_predicted_artifact; artifact_fraction; median_rep_error_probability; mean_rep_error_probability
+GBM clip3 sensitivity,Total SNVs,53164
+GBM clip3 sensitivity,Mean probability,0.1652233733076193
+GBM clip3 sensitivity,Median probability,0.00016087242
+GBM clip3 sensitivity,Predicted artifact candidates,3715
+GBM clip3 sensitivity,Artifact candidate fraction,0.06987811300880295
+GBM clip3 sensitivity,Retained variants,49449

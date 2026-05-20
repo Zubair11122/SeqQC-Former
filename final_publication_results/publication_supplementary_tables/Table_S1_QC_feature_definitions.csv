@@ -1,0 +1,12 @@
+Feature,Definition,Feature group
+DP,Read depth at the candidate locus.,Coverage
+AD,Alternate-allele read depth at the candidate locus.,Allele support
+VAF,Variant allele fraction computed from alternate-allele support and depth.,Allele support
+MQ,Mapping-quality summary for reads supporting the locus.,Read quality
+SB,Strand-bias summary at the candidate locus.,Bias
+tumor_strand_bias,Tumor-specific strand-bias estimate.,Bias
+tumor_orientation_bias,Tumor-specific read-orientation bias estimate.,Bias
+tumor_clipped_fraction,Fraction of tumor reads with clipping at or near the candidate locus.,Read quality
+tumor_mismatch_fraction,Fraction of tumor read alignments containing mismatches near the candidate locus.,Read quality
+normal_alt_fraction,Alternate-allele fraction observed in the matched normal sample.,Normal evidence
+germline_support_flag,Indicator of normal/germline-like support at the candidate locus.,Normal evidence

@@ -1,0 +1,7 @@
+Model,AUROC,AUPRC,accuracy,precision,recall,f1,TP,TN,FP,FN,threshold,Feature_set,features_used,features_excluded
+Logistic_regression_QC,0.959041,0.809146,0.957961,0.843822,0.96,0.898169,265,16874,740,11,0.75,Full_QC,,
+Random_forest_QC,0.93,0.93,0.93,0.93,0.93,0.93,257,16381,1233,19,0.75,Full_QC,,
+Gradient_boosting_QC,0.91,0.91,0.91,0.91,0.91,0.91,251,16029,1585,25,0.75,Full_QC,,
+Logistic_regression_reduced_QC,0.955209,0.599725,0.907305,0.21062,0.96,0.34545,265,15981,1633,11,0.75,Reduced_QC,DP;MQ;SB;tumor_strand_bias;tumor_orientation_bias;tumor_clipped_fraction;tumor_mismatch_fraction,AD;VAF;germline_support_flag;normal_alt_fraction
+Random_forest_reduced_QC,0.926807,0.668424,0.922254,0.629499,0.818804,0.71178,226,16245,1369,50,0.75,Reduced_QC,DP;MQ;SB;tumor_strand_bias;tumor_orientation_bias;tumor_clipped_fraction;tumor_mismatch_fraction,AD;VAF;germline_support_flag;normal_alt_fraction
+Gradient_boosting_reduced_QC,0.907107,0.667085,0.898911,0.741848,0.247283,0.370924,68,15833,1781,208,0.75,Reduced_QC,DP;MQ;SB;tumor_strand_bias;tumor_orientation_bias;tumor_clipped_fraction;tumor_mismatch_fraction,AD;VAF;germline_support_flag;normal_alt_fraction
