@@ -1,0 +1,66 @@
+# config.yaml - Optimized for high AUC (merged with existing config)
+
+# =========================
+# Data Paths
+# =========================
+data_root: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/data_root
+reference_fasta: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/reference/hg38.fa
+
+tumor_bam: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/data_root/bam/WES_FD_T_1.bwa.dedup.bam
+normal_bam: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/data_root/bam/WES_FD_N_1.bwa.dedup.bam
+
+umap_bw: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/data_root/map_rtim/umap_k100.hg38.bw
+rtim_bw: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/data_root/map_rtim/rtim_GM12878.hg38.nonoverlap.bigWig
+
+# =========================
+# Sequence Parameters
+# =========================
+sequence_window: 250          # UPDATED: half-window size 250 → total 501 bp (was 100)
+window_bp: 250                # Added for consistency
+map_rtim_window: 21
+min_base_quality: 13
+min_mapping_quality: 0
+
+# =========================
+# Training Parameters (Optimized for high AUC)
+# =========================
+epochs: 50                    # UPDATED: was 30
+batch_size: 32                # UPDATED: was 256 (optimal for RTX 4090)
+learning_rate: 0.0003         # UPDATED: was 0.0001
+weight_decay: 0.01            # UPDATED: was 0.0001
+early_stop_patience: 15       # UPDATED: was 8
+pos_weight: 5.0               # NEW: class imbalance weight
+
+# =========================
+# Advanced Training Settings
+# =========================
+gradient_clip_val: 1.0        # NEW: gradient clipping
+accumulate_grad_batches: 2    # NEW: simulate larger batch size
+precision: "16-mixed"         # NEW: mixed precision training
+warmup_epochs: 5              # NEW: learning rate warmup
+
+# =========================
+# Model Architecture
+# =========================
+cnn_channels: [64, 128, 128]  # NEW: CNN filter sizes
+cnn_kernels: [7, 5, 3]        # NEW: CNN kernel sizes
+transformer_layers: 3         # NEW: number of transformer layers
+transformer_heads: 4          # NEW: transformer attention heads
+dropout_rate: 0.3             # NEW: dropout rate
+qc_hidden_dim: 64             # NEW: QC feature hidden dimension
+
+# =========================
+# Prediction
+# =========================
+predict_batch_size: 128
+gbm_prediction_threshold: 0.75
+
+# =========================
+# GBM
+# =========================
+gbm_maf_dir: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/data_root/gbm_mafs
+
+# =========================
+# Model Checkpoint
+# =========================
+model_ckpt: /mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/rep_error_best_model.ckpt
