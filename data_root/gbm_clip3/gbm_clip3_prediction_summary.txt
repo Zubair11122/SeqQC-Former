@@ -1,0 +1,19 @@
+======================================================================
+GBM sensitivity analysis: scaled QC clipping = 3.0
+======================================================================
+Total variants: 53,164
+Threshold: 0.7500
+Scaled QC clip: [-3.0, +3.0]
+Predicted artifacts: 3,715
+Artifact rate: 6.99%
+Mean probability: 0.1652
+Median probability: 0.0002
+Min probability: 0.0000
+Max probability: 0.7936
+
+Probability distribution:
+p < 0.25:     39,829 (74.9%)
+p 0.25-0.50: 3,235 (6.1%)
+p 0.50-0.75: 6,385 (12.0%)
+p 0.75-0.90: 3,715 (7.0%)
+p >= 0.90:   0 (0.0%)
