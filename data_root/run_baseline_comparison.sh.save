@@ -1,0 +1,97 @@
+source ~/miniconda3/etc/profile.d/conda.sh
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate lit310_gpu_v2
+#!/bin/bash
+set -e
+
+# ----------------------------------
+# Paths (update if different)
+# ----------------------------------
+TOOLS_DIR="/mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/tools"
+TOOLS_VCF_DIR="/mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU/tools_vcf"
+DATA_ROOT="/mnt/820f42a7-6768-4c07-a318-b6345e4826df/zubei/rep_error_project/GPU"
+BASELINE_SCRIPT="$DATA_ROOT/baseline_comparison.py"
+
+# Make output folder
+mkdir -p "$TOOLS_VCF_DIR"
+
+# Activate conda environment
+echo "Activating conda environment lit310_gpu_v2..."
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate lit310_gpu_v2
+
+# ----------------------------------
+# Run GATK (Mutect2)
+# ----------------------------------
+echo "Running GATK Mutect2..."
+cd "$TOOLS_DIR/gatk"
+# Example command, update BAM and reference paths
+./Mutect2.sh -R "$DATA_ROOT/reference.fasta" -I "$DATA_ROOT/tumor.bam" -I "$DATA_ROOT/normal.bam" -O "$TOOLS_VCF_DIR/mutect2.vcf.gz"
+
+# ----------------------------------
+# Run Strelka2
+# ----------------------------------
+echo "Running Strelka2..."
+cd "$TOOLS_DIR/strelka2"
+./configureStrelkaWorkflow.py --bam "$DATA_ROOT/tumor.bam" --referenceFasta "$DATA_ROOT/reference.fasta" --runDir strelka_run
+cd strelka_run
+./runWorkflow.py -m local -j 8
+cp results/*.vcf.gz "$TOOLS_VCF_DIR/strelka2.vcf.gz"
+
+# ----------------------------------
+# Run NeuSomatic
+# ----------------------------------
+echo "Running NeuSomatic..."
+cd "$TOOLS_DIR/neusomatic"
+# Example command, adjust input/output
+./run.py --tumor "$DATA_ROOT/tumor.bam" --normal "$DATA_ROOT/normal.bam" --reference "$DATA_ROOT/reference.fasta" --out "$TOOLS_VCF_DIR/neusomatic.vcf.gz"
+
+# ----------------------------------
+# Run Lancet2
+# ----------------------------------
+echo "Running Lancet2..."
+cd "$TOOLS_DIR/lancet2"
+./lancet2.sh "$DATA_ROOT/tumor.bam" "$DATA_ROOT/normal.bam" "$DATA_ROOT/reference.fasta" "$TOOLS_VCF_DIR/lancet2.vcf.gz"
+
+# ----------------------------------
+# Run bcftools
+# ----------------------------------
+echo "Running bcftools..."
+cd "$TOOLS_DIR/bcftools"
+# Example using mpileup
+bcftools mpileup -f "$DATA_ROOT/reference.fasta" "$DATA_ROOT/tumor.bam" "$DATA_ROOT/normal.bam" | \
+bcftools call -mv -Oz -o "$TOOLS_VCF_DIR/bcftools.vcf.gz"
+
+# ----------------------------------
+# Run samtools (mpileup)
+# ----------------------------------
+echo "Running samtools..."
+cd "$TOOLS_DIR/samtools"
+samtools mpileup -f "$DATA_ROOT/reference.fasta" "$DATA_ROOT/tumor.bam" "$DATA_ROOT/normal.bam" | \
+bcftools call -mv -Oz -o "$TOOLS_VCF_DIR/samtools.vcf.gz"
+
+# ----------------------------------
+# Index all VCFs
+# ----------------------------------
+echo "Indexing VCFs..."
+cd "$TOOLS_VCF_DIR"
+for f in *.vcf.gz; do
+    tabix -p vcf "$f"
+done
+
+# ----------------------------------
+# Run baseline comparison Python script
+# ----------------------------------
+echo "Running baseline_comparison.py..."
+python "$BASELINE_SCRIPT"
+
+echo "Baseline comparison completed. Results saved in baseline_comparison.csv"
+
+
+
+
+
+
+chmod +x run_baseline_comparison.sh
+ls -l run_baseline_comparison.sh
+
