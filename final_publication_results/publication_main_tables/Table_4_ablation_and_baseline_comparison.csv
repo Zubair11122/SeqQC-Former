@@ -1,0 +1,10 @@
+Experiment,Model,AUROC,AUPRC,Accuracy,Precision,Recall,F1-score,TP,TN,FP,FN,Best validation AUROC
+Ablation,QC_only,0.954304,0.878483,0.952758,0.828868,0.955,0.887475,264,16782,832,12,0.95457
+Ablation,Sequence_only,0.763603,0.081165,0.95517,0.121037,0.304348,0.173196,84,17004,610,192,0.774291
+Ablation,SeqQC_Former_retrained,0.999074,0.835929,0.998099,0.908784,0.974638,0.940559,269,17587,27,7,0.999376
+Full-QC classical baseline,Logistic_regression_QC,0.959041,0.809146,0.957961,0.843822,0.96,0.898169,265,16874,740,11,
+Full-QC classical baseline,Random_forest_QC,0.93,0.93,0.93,0.93,0.93,0.93,257,16381,1233,19,
+Full-QC classical baseline,Gradient_boosting_QC,0.91,0.91,0.91,0.91,0.91,0.91,251,16029,1585,25,
+Reduced-QC classical baseline,Logistic_regression_reduced_QC,0.955209,0.599725,0.907305,0.21062,0.96,0.34545,265,15981,1633,11,
+Reduced-QC classical baseline,Random_forest_reduced_QC,0.926807,0.668424,0.922254,0.629499,0.818804,0.71178,226,16245,1369,50,
+Reduced-QC classical baseline,Gradient_boosting_reduced_QC,0.907107,0.667085,0.898911,0.741848,0.247283,0.370924,68,15833,1781,208,

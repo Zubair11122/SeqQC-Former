@@ -1,0 +1,17 @@
+Section,Metric,Value
+Held-out test performance,AUROC,0.99997
+Held-out test performance,AUPRC,0.998202
+Held-out test performance,Accuracy,0.998155
+Held-out test performance,Precision,0.893204
+Held-out test performance,Recall,1.0
+Held-out test performance,F1-score,0.94359
+Held-out test performance,True positives,276.0
+Held-out test performance,True negatives,17581.0
+Held-out test performance,False positives,33.0
+Held-out test performance,False negatives,0.0
+Held-out test performance,Decision threshold,0.75
+Calibration,Brier score,0.001907
+Calibration,Expected calibration error,0.002026
+Calibration,Mean predicted probability,0.017453
+Calibration,Median predicted probability,0.0
+Calibration,Positive fraction,0.015428

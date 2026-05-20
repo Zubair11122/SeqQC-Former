@@ -1,0 +1,12 @@
+Category,Item,Value
+Dataset,Total SEQC2-derived loci,"89,447"
+Dataset,Positive loci,"1,378"
+Dataset,Negative loci,"88,069"
+Feature matrix,Sequence window,501 bp
+Feature matrix,One-hot sequence shape,4 × 501
+Feature matrix,Structured QC features,11
+Split,Training loci,"57,245"
+Split,Validation loci,"14,312"
+Split,Held-out test loci,"17,890"
+Held-out test,Test positives,276
+Held-out test,Test negatives,"17,614"
