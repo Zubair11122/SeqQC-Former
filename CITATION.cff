@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "SeqQC-Former: GPU-Accelerated Detection and Analysis of Replication-Error-like Somatic Variant Artifacts"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Zubair"
+    given-names: "Muhammad"
+year: 2026
+repository-code: "https://github.com/Zubair11122/SeqQC-Former"
+license: MIT
+4. Suggested GitHub About description
+
+On GitHub, click the gear/settings icon near About, then replace the old description with:
+
+GPU-accelerated deep-learning pipeline for replication-error-like somatic variant artifact detection using sequence context, paired tumor-normal QC features, genomic annotations, and model interpretation.
+
+Add these topics:
+
+bioinformatics
+genomics
+cancer-genomics
+somatic-variants
+variant-calling
+deep-learning
+pytorch
+pytorch-lightning
+gpu
+shap
+replication-timing
+quality-control
