@@ -1,0 +1,9 @@
+metric,value
+Brier score,0.0019073045816227496
+Expected calibration error,0.0020255296582160492
+n_test,17890.0
+n_positive,276.0
+n_negative,17614.0
+positive_fraction,0.015427613191727222
+mean_predicted_probability,0.01745314284994327
+median_predicted_probability,9.697643e-19
