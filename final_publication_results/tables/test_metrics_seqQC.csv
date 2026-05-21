@@ -1,0 +1,2 @@
+split,n,positives,negatives,threshold,checkpoint,AUROC,AUPRC,accuracy,precision,recall,f1,TP,TN,FP,FN
+test,17890,276,17614,0.75,checkpoints/best-epoch=epoch=23-auroc=val_auroc=0.9997.ckpt,0.999970379,0.998201527,0.998155394,0.893203883,0.98913,0.943589744,273,17581,33,3
