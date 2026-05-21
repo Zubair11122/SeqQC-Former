@@ -1,0 +1,20 @@
+{
+  "prediction_file": "data_root/reviewer_safe/runs/chrom_all_qc/test_predictions.csv",
+  "n": 7004,
+  "n_positive": 178,
+  "positive_fraction": 0.02541404911479155,
+  "primary_threshold": 0.95,
+  "primary_metrics": {
+    "threshold": 0.95,
+    "auroc": 0.9999123476989831,
+    "auprc": 0.996608424949019,
+    "accuracy": 0.9952884066247858,
+    "precision": 0.8436018957345972,
+    "recall": 1.0,
+    "f1": 0.9151670951156813,
+    "tp": 178,
+    "tn": 6793,
+    "fp": 33,
+    "fn": 0
+  }
+}

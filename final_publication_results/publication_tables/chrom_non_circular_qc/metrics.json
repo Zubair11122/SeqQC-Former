@@ -1,0 +1,36 @@
+{
+  "run_name": "chrom_non_circular_qc",
+  "feature_mode": "non_circular_qc",
+  "best_epoch": 5,
+  "best_threshold_by_val_f1": 0.95,
+  "val": {
+    "auroc": 0.9928261539816773,
+    "auprc": 0.6007049607797952,
+    "threshold": 0.95,
+    "accuracy": 0.937007874015748,
+    "precision": 0.24,
+    "recall": 1.0,
+    "f1": 0.3870967741935484,
+    "tp": 96,
+    "tn": 4426,
+    "fp": 304,
+    "fn": 0,
+    "n": 4826,
+    "n_positive": 96
+  },
+  "test": {
+    "auroc": 0.9908919794440951,
+    "auprc": 0.6034625240962334,
+    "threshold": 0.95,
+    "accuracy": 0.9331810394060537,
+    "precision": 0.2755417956656347,
+    "recall": 1.0,
+    "f1": 0.43203883495145634,
+    "tp": 178,
+    "tn": 6358,
+    "fp": 468,
+    "fn": 0,
+    "n": 7004,
+    "n_positive": 178
+  }
+}

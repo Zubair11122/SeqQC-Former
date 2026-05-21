@@ -1,0 +1,20 @@
+{
+  "prediction_file": "data_root/reviewer_safe/runs/chrom_non_circular_qc/test_predictions.csv",
+  "n": 7004,
+  "n_positive": 178,
+  "positive_fraction": 0.02541404911479155,
+  "primary_threshold": 0.95,
+  "primary_metrics": {
+    "threshold": 0.95,
+    "auroc": 0.9908919794440951,
+    "auprc": 0.6034625240962334,
+    "accuracy": 0.9331810394060537,
+    "precision": 0.2755417956656347,
+    "recall": 1.0,
+    "f1": 0.43203883495145634,
+    "tp": 178,
+    "tn": 6358,
+    "fp": 468,
+    "fn": 0
+  }
+}

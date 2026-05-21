@@ -1,0 +1,32 @@
+{
+  "feature_mode": "all_qc",
+  "all_qc_columns": [
+    "DP",
+    "AD",
+    "VAF",
+    "MQ",
+    "SB",
+    "tumor_strand_bias",
+    "tumor_orientation_bias",
+    "tumor_clipped_fraction",
+    "tumor_mismatch_fraction",
+    "normal_alt_fraction",
+    "germline_support_flag"
+  ],
+  "used_qc_columns": [
+    "DP",
+    "AD",
+    "VAF",
+    "MQ",
+    "SB",
+    "tumor_strand_bias",
+    "tumor_orientation_bias",
+    "tumor_clipped_fraction",
+    "tumor_mismatch_fraction",
+    "normal_alt_fraction",
+    "germline_support_flag"
+  ],
+  "excluded_qc_columns": [],
+  "use_sequence": true,
+  "use_qc": true
+}
